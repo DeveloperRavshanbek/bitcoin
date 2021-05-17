@@ -1,0 +1,434 @@
+@import "./fontawesome.min.css";
+@import "./bootstrap.min.css";
+$backColor: #0d0d2b;
+$textColor: #3671e9;
+$white: #fff;
+
+@mixin button($bgColor, $color, $br, $fsz, $py, $px, $fw, $border, $otln, $cursor, $df, $algn) {
+  font-size: $fsz;
+  color: $color;
+  padding: $py $px;
+  border-radius: $br;
+  background-color: $bgColor;
+  border: $border;
+  outline: $otln;
+  font-weight: $fw;
+  cursor: $cursor;
+  display: $df;
+  align-items: $algn;
+}
+
+%default-title {
+  font-size: 43px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0em;
+  margin-bottom: 50px;
+}
+
+%about-info {
+  h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 0em;
+    color: #fff;
+    margin: 25px 0;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+  }
+  button {
+    padding: 10px 16px;
+    background: $textColor;
+    border-radius: 32px;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+header {
+  background-color: $backColor;
+  padding: 20px 60px;
+
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+
+    .header-logo {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      li {
+        color: #fff;
+        list-style: none;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        cursor: pointer;
+        padding: 14px 32px;
+
+        &:hover {
+          background-color: $textColor;
+          padding: 14px 32px;
+          border-radius: 32px;
+        }
+      }
+    }
+  }
+}
+
+.main-banner {
+  background-color: $backColor;
+  padding: 40px;
+  background-image: url(../img/bitcoin.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-x: 85%;
+  background-size: 40%;
+  .content-info {
+    width: 588px;
+  }
+
+  .aksiya {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    width: 345px;
+    padding: 5px 10px 5px 5px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+
+    span {
+      background-color: #fff;
+      color: $backColor;
+      padding: 7px 8px;
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.04em;
+    }
+  }
+  h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 76px;
+    letter-spacing: 0em;
+    color: #fff;
+    margin: 25px 0;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #e0e0e0;
+  }
+  .button {
+    @include button(#3671e9, #fff, 32px, 16px, 16px, 24px, 500, none, none, pointer, flex, center);
+
+    .right_btn {
+      background-size: cover;
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.main-content {
+  background-color: $backColor;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  .main-info {
+    display: flex;
+    justify-content: space-around;
+
+    .column {
+      display: flex;
+      align-items: center;
+      span {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin-right: 15px;
+        height: 55px;
+        width: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          color: $textColor;
+          font-size: 22px;
+        }
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        .bit {
+          color: #fff;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 28px;
+          letter-spacing: 0.01em;
+          color: #e0e0e0;
+        }
+      }
+    }
+  }
+}
+.About {
+  background-color: $backColor;
+  padding-bottom: 80px;
+  height: 100%;
+
+  .serv-img img {
+    width: 90%;
+  }
+
+  .about-info {
+    @extend %about-info;
+  }
+}
+.services {
+  background-color: #f9fafd;
+  padding: 80px 0;
+
+  .servise-title {
+    @extend %default-title;
+    color: #000;
+  }
+  .serv-col {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .service-card {
+    padding: 25px 10px;
+    background-color: #fff;
+    border-radius: 16px;
+    text-align: center;
+    color: $white;
+    justify-content: space-evenly;
+    &__active {
+      background-color: #2b076e;
+      color: #fff;
+
+      & > .card-title {
+        color: #fff;
+      }
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+    span {
+      display: block;
+      font-size: 25px;
+      line-height: 150%;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #000;
+
+      sup {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #ada0c7;
+      }
+    }
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: normal;
+      color: #ada0c7;
+    }
+    button {
+      padding: 8px 10px 8px 16px;
+      background: $textColor;
+      border-radius: 32px;
+      border: 0;
+      outline: none;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+
+      .right_btn {
+        background-size: cover;
+        width: 32px;
+        height: 32px;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin-left: 10px;
+      }
+    }
+    .serv-button {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 50%;
+      border: 1px solid #ded8e8;
+      background-position: center;
+      cursor: pointer;
+    }
+  }
+}
+.product {
+  background-color: #2b076e;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  height: 100%;
+
+  .blog-title {
+    @extend %default-title;
+    color: #fff;
+  }
+
+  .about-info {
+    @extend %about-info;
+  }
+  .statistic-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .table img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.contact {
+  background-color: #0d0d2b;
+  padding: 80px 0;
+
+  .contact-blog {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px;
+    background-color: $textColor;
+    border-radius: 23px;
+  }
+  .about-info {
+    @extend %about-info;
+  }
+  form input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 10px;
+    color: #fff;
+    width: 100%;
+    border-bottom: 2px solid #5688ec;
+
+    &::placeholder {
+      color: #dde7fa;
+    }
+  }
+  button {
+    padding: 14px 32px;
+    background: #ffffff;
+    border-radius: 32px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+  }
+}
+footer {
+  background-color: $backColor;
+  padding-top: 80px;
+  padding-bottom: 20px;
+
+  .footer-links {
+    span {
+      color: #fff;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+    }
+    ul {
+      padding: 0;
+      margin-top: 20px;
+      li {
+        list-style: none;
+        color: #90909b;
+        // padding-top: 8px;
+        font-size: 16px;
+        line-height: 38px;
+        cursor: pointer;
+      }
+    }
+  }
+  h1 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 150%;
+    color: #fff;
+  }
+  .cards {
+    img {
+      margin-right: 10px;
+    }
+  }
+  .footer-text {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #d3d3d3;
+  }
+  .social-media{
+    i{
+      color: #fff;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  }
+}

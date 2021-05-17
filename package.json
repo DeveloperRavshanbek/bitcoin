@@ -1,0 +1,19 @@
+{
+  "name": "sass-task",
+  "version": "1.0.0",
+  "description": "'Sass lesson homework'",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ravshan",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp-sass": "^4.1.0",
+    "sass": "^1.32.8"
+  }
+}
